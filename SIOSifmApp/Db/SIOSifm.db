@@ -1,0 +1,988 @@
+###################################################################
+
+record(bo, "$(P)$(R)Run")
+{
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_RUN")
+    field(ZNAM, "Stop")
+    field(ONAM, "Run")
+    field(PINI, "1")
+}
+
+record(bi, "$(P)$(R)Run_R")
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_RUN")
+    field(ZNAM, "Done")
+    field(ONAM, "Running")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+}
+
+record(longout, "$(P)$(R)AverageAmount") 
+{
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_AVERAGE_AMOUNT")
+    field(PINI, "1")
+}
+
+record(longin, "$(P)$(R)AverageAmount_R") 
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_AVERAGE_AMOUNT")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+}
+
+record(longin, "$(P)$(R)LostValues") 
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_LOST_VALUES")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+}
+
+######################################################
+## Measurement options
+record(bo, "$(P)$(R)Mode")
+{
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_MODE")
+    field(ZNAM, "Continuous")
+    field(ONAM, "Block")
+    field(PINI, "1")
+}
+
+record(bo, "$(P)$(R)MeasureLength") 
+{
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_MEASURE_LENGTH")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+    field(PINI, "1")
+}
+
+record(bo, "$(P)$(R)MeasureSinCos") 
+{
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_MEASURE_SIN_COS")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+    field(PINI, "1")
+}
+
+record(bo, "$(P)$(R)MeasureCircle") 
+{
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_MEASURE_CIRCLE")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+    field(PINI, "1")
+}
+
+
+##
+
+record(bo, "$(P)$(R)TestPattern") 
+{
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_TEST_PATTERN")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+    field(PINI, "1")
+}
+
+record(bo, "$(P)$(R)ClockCounter") 
+{
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_CLOCK_COUNTER")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+    field(PINI, "1")
+}
+
+record(bo, "$(P)$(R)SampleCounter") 
+{
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_SAMPLE_COUNTER")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+    field(PINI, "1")
+}
+
+record(bo, "$(P)$(R)BeamBreak") 
+{
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_BEAM_BREAK")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+    field(PINI, "1")
+}
+
+record(bo, "$(P)$(R)MeasureChannel1") 
+{
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_MEASURE_CHANNEL1")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+    field(PINI, "1")
+}
+
+record(bo, "$(P)$(R)MeasureChannel2") 
+{
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_MEASURE_CHANNEL2")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+    field(PINI, "1")
+}
+
+record(bo, "$(P)$(R)MeasureChannel3") 
+{
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_MEASURE_CHANNEL3")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+    field(PINI, "1")
+}
+
+record(bo, "$(P)$(R)MeasureChannel4") 
+{
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_MEASURE_CHANNEL4")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+    field(PINI, "1")
+}
+
+record(bo, "$(P)$(R)RawMode") 
+{
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_RAW_MODE")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+    field(PINI, "1")
+}
+
+record(bo, "$(P)$(R)FilterUser") 
+{
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_FILTER_USER")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+    field(PINI, "1")
+}
+
+record(bo, "$(P)$(R)Zero") 
+{
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_ZERO")
+    field(ZNAM, "Off")
+    field(ONAM, "Set to zero")
+    field(PINI, "1")
+}
+
+record(longout, "$(P)$(R)OutputWordRate") 
+{
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_OUTPUT_WORD_RATE")
+    field(PINI, "1")
+}
+
+## Read-back records
+record(bi, "$(P)$(R)Mode_R")
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_MODE")
+    field(ZNAM, "Continuous")
+    field(ONAM, "Block")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+}
+
+record(bi, "$(P)$(R)MeasureLength_R") 
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_MEASURE_LENGTH")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+}
+
+record(bi, "$(P)$(R)MeasureSinCos_R") 
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_MEASURE_SIN_COS")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+}
+
+record(bi, "$(P)$(R)MeasureCircle_R") 
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_MEASURE_CIRCLE")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+}
+
+record(bi, "$(P)$(R)TestPattern_R") 
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_TEST_PATTERN")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+}
+
+record(bi, "$(P)$(R)ClockCounter_R") 
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_CLOCK_COUNTER")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+}
+
+record(bi, "$(P)$(R)SampleCounter_R") 
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_SAMPLE_COUNTER")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+}
+
+record(bi, "$(P)$(R)BeamBreak_R") 
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_BEAM_BREAK")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+}
+
+record(bi, "$(P)$(R)MeasureChannel1_R") 
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_MEASURE_CHANNEL1")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+}
+
+record(bi, "$(P)$(R)MeasureChannel2_R") 
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_MEASURE_CHANNEL2")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+}
+
+record(bi, "$(P)$(R)MeasureChannel3_R") 
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_MEASURE_CHANNEL3")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+}
+
+record(bi, "$(P)$(R)MeasureChannel4_R") 
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_MEASURE_CHANNEL4")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+}
+
+record(bi, "$(P)$(R)RawMode_R") 
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_RAW_MODE")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+}
+
+
+record(bi, "$(P)$(R)FilterUser_R") 
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_FILTER_USER")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+}
+
+record(longin, "$(P)$(R)OutputWordRate_R") 
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_OUTPUT_WORD_RATE")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+}
+
+## Read-back records
+record(bi, "$(P)$(R)Mode_R")
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_MODE")
+    field(ZNAM, "Continuous")
+    field(ONAM, "Block")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+}
+
+record(bi, "$(P)$(R)MeasureLength_R") 
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_MEASURE_LENGTH")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+}
+
+record(bi, "$(P)$(R)MeasureSinCos_R") 
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_MEASURE_SIN_COS")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+}
+
+record(bi, "$(P)$(R)MeasureCircle_R") 
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_MEASURE_CIRCLE")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+}
+
+record(bi, "$(P)$(R)TestPattern_R") 
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_TEST_PATTERN")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+}
+
+record(bi, "$(P)$(R)ClockCounter_R") 
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_CLOCK_COUNTER")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+}
+
+record(bi, "$(P)$(R)SampleCounter_R") 
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_SAMPLE_COUNTER")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+}
+
+record(bi, "$(P)$(R)BeamBreak_R") 
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_BEAM_BREAK")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+}
+
+record(bi, "$(P)$(R)MeasureChannel1_R") 
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_MEASURE_CHANNEL1")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+}
+
+record(bi, "$(P)$(R)MeasureChannel2_R") 
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_MEASURE_CHANNEL2")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+}
+
+record(bi, "$(P)$(R)MeasureChannel3_R") 
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_MEASURE_CHANNEL3")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+}
+
+record(bi, "$(P)$(R)MeasureChannel4_R") 
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_MEASURE_CHANNEL4")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+}
+
+
+######################################################
+## 
+#  0  field(ZRST, "(Measure usermode)")
+#  1  field(ONST, "Measure length")
+#  2  field(TWST, "Measure sin/cos")
+#  3  field(THST, "Measure circle")
+# 
+#  4  field(FRST, "Test pattern")
+#  5  field(FVST, "Clock counter (50MHz)")
+#  6  field(SXST, "Beambreak off")
+#  7  field(SVST, "Sample counter")
+# 
+#  8  field(EIST, "Measure channel 1")
+#  9  field(NIST, "Measure channel 2")
+# 10  field(TEST, "Measure channel 3")
+# 11  field(ELST, "Measure channel 4")
+# 
+# 12  field(TVST, "Filter off")
+# 13  field(TTST, "Filter user")
+# 14  field(FTST, "Raw mode")
+# 15  field(FFST, "")
+#}
+
+record(ai, "$(P)$(R)Channel1")
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_CHANNEL1")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+}
+
+record(ai, "$(P)$(R)Channel2")
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_CHANNEL2")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+}
+
+record(ai, "$(P)$(R)Channel3")
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_CHANNEL3")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+}
+
+record(ai, "$(P)$(R)Channel4")
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_CHANNEL4")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+}
+
+######################################################
+## 
+#  0  field(ZRST, "(Measure usermode)")
+#  1  field(ONST, "Measure length")
+#  2  field(TWST, "Measure sin/cos")
+#  3  field(THST, "Measure circle")
+# 
+#  4  field(FRST, "Test pattern")
+#  5  field(FVST, "Clock counter (50MHz)")
+#  6  field(SXST, "Beambreak off")
+#  7  field(SVST, "Sample counter")
+# 
+#  8  field(EIST, "Measure channel 1")
+#  9  field(NIST, "Measure channel 2")
+# 10  field(TEST, "Measure channel 3")
+# 11  field(ELST, "Measure channel 4")
+# 
+# 12  field(TVST, "Filter off")
+# 13  field(TTST, "Filter user")
+# 14  field(FTST, "Raw mode")
+# 15  field(FFST, "")
+#}
+
+record(ai, "$(P)$(R)Channel1")
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_CHANNEL1")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+    field(PREC, "4")
+}
+
+record(ai, "$(P)$(R)Channel2")
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_CHANNEL2")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+    field(PREC, "4")
+}
+
+record(ai, "$(P)$(R)Channel3")
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_CHANNEL3")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+    field(PREC, "4")
+}
+
+record(ai, "$(P)$(R)Channel4")
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_CHANNEL4")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+    field(PREC, "4")
+}
+
+
+#############################################################
+### Signal quality
+
+record(longin, "$(P)$(R)SignalQuality1") 
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_SIGNAL_QUALITY1")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+}
+
+record(longin, "$(P)$(R)SignalQuality2") 
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_SIGNAL_QUALITY2")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+}
+
+record(longin, "$(P)$(R)SignalQuality3") 
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_SIGNAL_QUALITY3")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+}
+
+record(longin, "$(P)$(R)SignalQuality4") 
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_SIGNAL_QUALITY4")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+}
+
+# Pressure
+record(ai, "$(P)$(R)AirPressure1") 
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_AIR_PRESSURE1")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+    field(PREC, "1")
+}
+
+record(ai, "$(P)$(R)AirPressure2") 
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_AIR_PRESSURE2")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+    field(PREC, "1")
+}
+
+record(ai, "$(P)$(R)AirPressure3") 
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_AIR_PRESSURE3")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+    field(PREC, "1")
+}
+
+record(ai, "$(P)$(R)AirPressure4") 
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_AIR_PRESSURE4")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+    field(PREC, "1")
+}
+
+# Refraction
+record(ai, "$(P)$(R)AirRefraction1") 
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_AIR_REFRACTION1")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+    field(PREC, "4")
+}
+
+record(ai, "$(P)$(R)AirRefraction2") 
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_AIR_REFRACTION2")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+    field(PREC, "4")
+}
+
+record(ai, "$(P)$(R)AirRefraction3") 
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_AIR_REFRACTION3")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+    field(PREC, "4")
+}
+
+record(ai, "$(P)$(R)AirRefraction4") 
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_AIR_REFRACTION4")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+    field(PREC, "4")
+}
+
+# Humidity
+record(ai, "$(P)$(R)Humidity1") 
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_HUMIDITY1")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+    field(PREC, "3")
+}
+
+record(ai, "$(P)$(R)Humidity2") 
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_HUMIDITY2")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+    field(PREC, "3")
+}
+
+record(ai, "$(P)$(R)Humidity3") 
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_HUMIDITY3")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+    field(PREC, "3")
+}
+
+record(ai, "$(P)$(R)Humidity4") 
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_HUMIDITY4")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+    field(PREC, "3")
+}
+
+# Temperature
+record(ai, "$(P)$(R)Temperature1") 
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_TEMPERATURE1")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+    field(PREC, "4")
+}
+
+record(ai, "$(P)$(R)Temperature2") 
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_TEMPERATURE2")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+    field(PREC, "4")
+}
+
+record(ai, "$(P)$(R)Temperature3") 
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_TEMPERATURE3")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+    field(PREC, "4")
+}
+
+record(ai, "$(P)$(R)Temperature4") 
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_TEMPERATURE4")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+    field(PREC, "4")
+}
+
+# VaporPressure
+record(ai, "$(P)$(R)VaporPressure1") 
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_VAPOR_PRESSURE1")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+    field(PREC, "3")
+}
+
+record(ai, "$(P)$(R)VaporPressure2") 
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_VAPOR_PRESSURE2")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+    field(PREC, "3")
+}
+
+record(ai, "$(P)$(R)VaporPressure3") 
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_VAPOR_PRESSURE3")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+    field(PREC, "3")
+}
+
+record(ai, "$(P)$(R)VaporPressure4") 
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_VAPOR_PRESSURE4")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+    field(PREC, "3")
+}
+
+# Wavelength
+record(ai, "$(P)$(R)Wavelength1") 
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_WAVELENGTH1")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+    field(PREC, "3")
+}
+
+record(ai, "$(P)$(R)Wavelength2") 
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_WAVELENGTH2")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+    field(PREC, "3")
+}
+
+record(ai, "$(P)$(R)Wavelength3") 
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_WAVELENGTH3")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+    field(PREC, "3")
+}
+
+record(ai, "$(P)$(R)Wavelength4") 
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_WAVELENGTH4")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+    field(PREC, "3")
+}
+
+# StdDev
+record(ai, "$(P)$(R)StdDev1") 
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_STDDEV1")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+    field(PREC, "4")
+}
+
+record(ai, "$(P)$(R)StdDev2") 
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_STDDEV2")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+    field(PREC, "4")
+}
+
+record(ai, "$(P)$(R)StdDev3") 
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_STDDEV3")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+    field(PREC, "4")
+}
+
+record(ai, "$(P)$(R)StdDev4") 
+{
+    field(DTYP, "asynFloat64")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_STDDEV4")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+    field(PREC, "4")
+}
+
+# DeadPath
+record(longin, "$(P)$(R)DeadPath1") 
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_DEAD_PATH1")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+}
+
+record(longin, "$(P)$(R)DeadPath2") 
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_DEAD_PATH2")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+}
+
+record(longin, "$(P)$(R)DeadPath3") 
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_DEAD_PATH3")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+}
+
+record(longin, "$(P)$(R)DeadPath4") 
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_DEAD_PATH4")
+    field(PINI, "1")
+    field(SCAN, "I/O Intr")
+}
+
+# BeamBroken
+record(bi, "$(P)$(R)BeamBroken1") 
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_BEAM_BROKEN1")
+    field(PINI, "1")
+    field(ZNAM, "No")
+    field(ONAM, "YES")
+    field(SCAN, "I/O Intr")
+}
+
+record(bi, "$(P)$(R)BeamBroken2") 
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_BEAM_BROKEN2")
+    field(PINI, "1")
+    field(ZNAM, "No")
+    field(ONAM, "YES")
+    field(SCAN, "I/O Intr")
+}
+
+record(bi, "$(P)$(R)BeamBroken3") 
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_BEAM_BROKEN3")
+    field(PINI, "1")
+    field(ZNAM, "No")
+    field(ONAM, "YES")
+    field(SCAN, "I/O Intr")
+}
+
+record(bi, "$(P)$(R)BeamBroken4") 
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_BEAM_BROKEN4")
+    field(PINI, "1")
+    field(ZNAM, "No")
+    field(ONAM, "YES")
+    field(SCAN, "I/O Intr")
+}
+
+# LaserUnstable
+
+record(bi, "$(P)$(R)LaserUnstable1") 
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_LASER_UNSTABLE1")
+    field(PINI, "1")
+    field(ZNAM, "No")
+    field(ONAM, "YES")
+    field(SCAN, "I/O Intr")
+}
+
+record(bi, "$(P)$(R)LaserUnstable2") 
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_LASER_UNSTABLE2")
+    field(PINI, "1")
+    field(ZNAM, "No")
+    field(ONAM, "YES")
+    field(SCAN, "I/O Intr")
+}
+record(bi, "$(P)$(R)LaserUnstable3") 
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_LASER_UNSTABLE3")
+    field(PINI, "1")
+    field(ZNAM, "No")
+    field(ONAM, "YES")
+    field(SCAN, "I/O Intr")
+}
+
+record(bi, "$(P)$(R)LaserUnstable4") 
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))SIOS_LASER_UNSTABLE4")
+    field(PINI, "1")
+    field(ZNAM, "No")
+    field(ONAM, "YES")
+    field(SCAN, "I/O Intr")
+}
+
+
