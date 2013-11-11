@@ -6,14 +6,18 @@
 dbLoadDatabase("../../dbd/SIOSifm.dbd",0,0)
 SIOSifm_registerRecordDeviceDriver(pdbbase) 
 
-SIOSifmDriverConfigure("port1")
-#SIOSifmConnectUSB("port1", 0, -1)
-SIOSifmConnectUSB("port1", -1, 0)
+epicsEnvSet("P", "$(P=MLL:)")
+epicsEnvSet("R", "$(R=SIOS:)")
+epicsEnvSet("PORT", "$(PORT=SIOS)")
+
+SIOSifmDriverConfigure("$(PORT)")
+
+# SIOSifmConnectUSB portName device_num serial_num
+#SIOSifmConnectUSB("$(PORT)", 0, -1)
+
+SIOSifmConnectUSB("$(PORT)", -1, 0)
 
 ## Load record instances
-dbLoadRecords("../../db/SIOSifm.db","P=SIOS:,R=one:,PORT=port1,ADDR=0,TIMEOUT=1")
+dbLoadRecords("../../db/SIOSifm.db","P=$(P),R=$(R),PORT=$(PORT),ADDR=0,TIMEOUT=1")
 
 iocInit()
-
-## Start any sequence programs
-#seq sncSIOSifm,"user=nanopos"

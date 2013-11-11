@@ -21,6 +21,8 @@ SIOSifm_DBD += SIOSifmSupport.dbd asyn.dbd
 # Add all the support libraries needed by this IOC
 SIOSifm_LIBS += asyn siosifm
 
+siosifm_DIR = $(TOP)/sios_lib
+
 # SIOSifm_registerRecordDeviceDriver.cpp derives from SIOSifm.dbd
 SIOSifm_SRCS += SIOSifm_registerRecordDeviceDriver.cpp
 SIOSifm_SRCS += SIOSifmDriver.cpp
